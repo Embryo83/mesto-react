@@ -4,8 +4,9 @@ function ImagePopup(props) {
   return (
     <section
       className={`popup popup_type_photo ${
-        props.card.link ? "popup_is-open" : ""
+        props.card.state ? "popup_is-open" : ""
       }`}
+      onClick={props.onClose}
     >
       <figure className="popup__container_type_photo">
         <button
@@ -14,7 +15,7 @@ function ImagePopup(props) {
           onClick={props.onClose}
         ></button>
         <img
-          src={props.card.link}
+          src={props.card.src}
           alt={props.card.name}
           className="popup__photo"
         />

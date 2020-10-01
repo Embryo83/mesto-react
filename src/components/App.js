@@ -13,7 +13,7 @@ function App() {
     false
   );
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-  const [selectedCard, setIsImagePopupOpen] = React.useState(false);
+  const [selectedCard, setIsImagePopupOpen] = React.useState({});
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
@@ -28,14 +28,14 @@ function App() {
   }
 
   function handleCardClick(card) {
-    setIsImagePopupOpen(card);
+    setIsImagePopupOpen({ state: true, src: card.link, name: card.name });
   }
 
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
     setIsAddPlacePopupOpen(false);
-    setIsImagePopupOpen(false);
+    setIsImagePopupOpen({});
   }
 
   return (
