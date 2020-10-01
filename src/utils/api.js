@@ -53,18 +53,9 @@ export default class Api {
     }).then(this.checkRes);
   }
 
-  addLike(id) {
+  handleLike(id, like) {
     return fetch(`${this._baseUrl}/cards/likes/${id}`, {
-      method: "PUT",
-      headers: {
-        authorization: this._token,
-      },
-    }).then(this.checkRes);
-  }
-
-  deleteLike(id) {
-    return fetch(`${this._baseUrl}/cards/likes/${id}`, {
-      method: "DELETE",
+      method: like ? "PUT" : "DELETE",
       headers: {
         authorization: this._token,
       },

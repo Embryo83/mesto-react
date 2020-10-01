@@ -11,14 +11,10 @@ function Main(props) {
   React.useEffect(() => {
     Promise.all([api.getInitialCards(), api.getUserInfo()])
       .then(([cards, data]) => {
-        const userId = data._id;
-
         setUserName(data.name);
         setUserDescription(data.about);
         setUserAvatar(data.avatar);
         setInitialCards(cards);
-
-        return userId;
       })
       .catch((err) => console.log(err));
   }, []);

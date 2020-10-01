@@ -28,7 +28,7 @@ function App() {
   }
 
   function handleCardClick(card) {
-    setIsImagePopupOpen({ state: true, src: card.link, name: card.name });
+    setIsImagePopupOpen(card);
   }
 
   function closeAllPopups() {
