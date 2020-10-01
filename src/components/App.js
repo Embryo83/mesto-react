@@ -78,6 +78,7 @@ function App() {
           id="name-input"
           type="text"
           name="name"
+          placeholder = "Имя"
           className="popup__input popup__input_type_name"
           minLength="2"
           maxLength="40"
@@ -87,6 +88,7 @@ function App() {
         <input
           type="text"
           name="job"
+          placeholder="О себе"
           className="popup__input popup__input_type_job"
           id="job-input"
           minLength="2"
