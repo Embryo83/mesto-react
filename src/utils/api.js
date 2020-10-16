@@ -30,7 +30,7 @@ export default class Api {
     }).then(this.checkRes);
   }
 
-  addNewCard(name, link) {
+  addNewCard(item) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: {
@@ -38,8 +38,8 @@ export default class Api {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: name,
-        link: link,
+        name: item.name,
+        link: item.link,
       }),
     }).then(this.checkRes);
   }
@@ -84,7 +84,7 @@ export default class Api {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        avatar: url.link,
+        avatar: url.avatar,
       }),
     }).then(this.checkRes);
   }
