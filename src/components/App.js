@@ -121,7 +121,7 @@ function App() {
     api
       .addNewCard(item)
       .then((res) => {
-        setCards([...cards, res]);
+        setCards([res, ...cards]);
         closeAllPopups();
       })
       .catch((err) => {
