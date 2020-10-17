@@ -50,7 +50,7 @@ function App() {
         console.log(err);
       })
       .finally(() => {
-        closeAllPopups();
+        setLoading(false);
       });
   }
 
@@ -66,7 +66,7 @@ function App() {
         console.log(err);
       })
       .finally(() => {
-        closeAllPopups();
+        setLoading(false);
       });
   }
 
@@ -101,12 +101,13 @@ function App() {
       .then(() => {
         const newCards = cards.filter((c) => c._id !== cardDelete._id);
         setCards(newCards);
+        closeAllPopups();
       })
       .catch((err) => {
         console.log(err);
       })
       .finally(() => {
-        closeAllPopups();
+        setLoading(false);
       });
   }
 
@@ -121,12 +122,13 @@ function App() {
       .addNewCard(item)
       .then((res) => {
         setCards([...cards, res]);
+        closeAllPopups();
       })
       .catch((err) => {
         console.log(err);
       })
       .finally(() => {
-        closeAllPopups();
+        setLoading(false);
       });
   }
 
@@ -136,7 +138,6 @@ function App() {
     setIsAddPlacePopupOpen(false);
     setIsImagePopupOpen({});
     setIsConfirmPopupOpen(false);
-    setLoading(false);
   }
 
   return (
